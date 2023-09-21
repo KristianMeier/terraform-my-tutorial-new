@@ -1,6 +1,6 @@
 resource "aws_s3_bucket" "my_bucket" {
   bucket = "krille-unikt-navn-hihi" # Change this to a unique name or use a variable.
-  force_destroy = true
+  # force_destroy = true
 }
 
 resource "aws_iam_policy" "s3_access_policy" {
@@ -14,7 +14,8 @@ resource "aws_iam_policy" "s3_access_policy" {
         Effect = "Allow",
         Action = [
           "s3:GetObject",
-          "s3:PutObject"
+          "s3:PutObject",
+          "s3:ListBucket"
         ],
         Resource = "${aws_s3_bucket.my_bucket.arn}/*"
       }
