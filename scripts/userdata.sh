@@ -8,6 +8,24 @@ sudo yum update -y
 sudo yum install git -y
 cd /var/www/html
 sudo git clone https://github.com/KristianMeier/cvr-for-aws-september-static-public.git .
+# Install Docker - the stuff that working manually
+#sudo amazon-linux-extras install docker
+#sudo service docker start
+#sudo systemctl enable docker
+#sudo usermod -a -G docker ec2-user
+
+# Install Docker - the stuff that GPT suggested for a script
+# sudo yum install docker -y
+# sudo service docker start
+# sudo usermod -a -G docker ec2-user
+# sudo chkconfig docker on
+
+# Install docker compose
+# sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+# sudo chmod +x /usr/local/bin/docker-compose
+# sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+
+
 
 ### SSH into private git repo
 # Problem: Det dur ikke i script, da man skal skrive "yes" på et tidspunkt
