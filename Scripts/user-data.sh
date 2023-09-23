@@ -4,10 +4,7 @@ sudo yum update -y
 sudo yum install git -y
 cd /home/ec2-user
 sudo mkdir react-app && cd react-app
-aws s3 cp s3://krille-unikt-navn-hihi/id_rsa /home/ec2-user/.ssh/id_rsa
-aws s3 cp s3://krille-unikt-navn-hihi/id_rsa.pub /home/ec2-user/.ssh/id_rsa.pub
-sudo chmod 600 /home/ec2-user/.ssh/id_rsa
-GIT_SSH_COMMAND="ssh -o StrictHostKeyChecking=no" git clone git@github.com:KristianMeier/cvr-for-aws-september-static-private.git .
+git clone https://github.com/KristianMeier/cvr-for-aws-september.git .
 
 # Install Docker
 sudo amazon-linux-extras install docker -y
