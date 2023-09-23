@@ -21,3 +21,13 @@ resource "aws_instance" "dev_node" {
     Name = "dev-node"
   }
 }
+
+# Elastic IP for the EC2 instance
+resource "aws_eip" "dev_node_eip" {
+  instance = aws_instance.dev_node.id
+  domain   = "vpc"
+
+  tags = {
+    Name = "dev-node-eip"
+  }
+}

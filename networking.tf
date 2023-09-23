@@ -52,8 +52,8 @@ resource "aws_security_group" "mtc_sg" {
   vpc_id      = aws_vpc.mtc_vpc.id
 
   ingress {
-    from_port   = 0 # måske skift til 3000
-    to_port     = 0 # måske skift til 3000
+    from_port   = 0    # måske skift til 3000
+    to_port     = 0    # måske skift til 3000
     protocol    = "-1" # Måske skift til "tcp". -1 er all protocols.
     cidr_blocks = ["0.0.0.0/0"]
   }
