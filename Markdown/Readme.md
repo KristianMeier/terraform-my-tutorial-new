@@ -1,3 +1,11 @@
+# ssh'ing
+
+Her er 45 den linje der brokkes over
+
+- sed -i '' '45d' /Users/kristianmeier/.ssh/known_hosts
+- rm /Users/kristianmeier/.ssh/known_hosts
+- nano /Users/kristianmeier/.ssh/known_hosts
+
 # install
 
 - terraform init
