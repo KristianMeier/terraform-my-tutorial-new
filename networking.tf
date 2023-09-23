@@ -65,3 +65,16 @@ resource "aws_security_group" "mtc_sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
+
+resource "aws_eip" "dev_node_eip" {
+  domain = "vpc"
+
+  tags = {
+    Name = "dev-node-eip"
+  }
+}
+
+resource "aws_eip_association" "eip_assoc" {
+  instance_id   = aws_instance.dev_node.id
+  allocation_id = aws_eip.dev_node_eip.id
+}
