@@ -24,10 +24,16 @@ resource "aws_instance" "dev_node" {
 
 # Elastic IP for the EC2 instance
 resource "aws_eip" "dev_node_eip" {
-  instance = aws_instance.dev_node.id
-  domain   = "vpc"
+  domain = "vpc"
 
   tags = {
     Name = "dev-node-eip"
   }
+}
+
+# Associate the Elastic IP with the EC2 instance
+# Ellers vil den bare bli liggende og ikke bli brukt
+resource "aws_eip_association" "eip_assoc" {
+  instance_id   = aws_instance.dev_node.id
+  allocation_id = aws_eip.dev_node_eip.id
 }
