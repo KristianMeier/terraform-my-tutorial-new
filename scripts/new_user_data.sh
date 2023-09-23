@@ -1,1 +1,0 @@
-terraform taint aws_instance.dev_node && terraform apply -auto-approve
