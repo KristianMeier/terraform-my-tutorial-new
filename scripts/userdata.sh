@@ -8,6 +8,10 @@ sudo yum update -y
 sudo yum install git -y
 cd /var/www/html
 sudo git clone https://github.com/KristianMeier/cvr-for-aws-september-static-public.git .
+
+sudo git clone https://github.com/KristianMeier/cvr-for-aws-september.git .
+
+
 # Install Docker - the stuff that working manually
 #sudo amazon-linux-extras install docker
 #sudo service docker start
